@@ -5,7 +5,7 @@
     
     // add Cors-configuration
     // header("Access-Control-Allow-Origin: http://localhost:3000");
-    header("Access-Control-Allow-Origin: http://127.0.0.1:63040");
+    header("Access-Control-Allow-Origin: *");
     header('Access-Control-Allow-Credentials: true');
     header("Access-Control-Allow-Methods: OPTIONS, GET, POST, PUT, DELETE");
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
@@ -23,9 +23,13 @@
             break;
             case "GET":
                 switch ($_SERVER['PATH_INFO']) {
-
                     case '/comments':
-                        
+                        $comments = get_comments();
+                        if($comments && count($comments) > 0){
+                            print_r(json_encode($comments));
+                        } else {
+                            print_r([]);
+                        }
                     break;
                     default:
                         throw new Exception("No path found", 404);
@@ -34,18 +38,17 @@
             case "POST":
                 switch ($_SERVER['PATH_INFO']) {
                     case '/login':
-                        
-                    break;
-                    case '/register':
-                        
-                    break;
-                    case '/logout':
-                       
+                        if(key_exists('username', $_POST) && key_exists('pass', $_POST)){
+                            $user = login($_POST['username'],$_POST['pass']);
+                            print_r(json_encode($user));
+                        }else{
+                            throw new Exception("Information missing from the request", 400);
+                        }
                     break;
                     case '/addComment':
                         // check if user is logged in, if yes it adds a new entry to the cart_tb
                         if(key_exists('userId', $_POST) && key_exists('comment', $_POST)){
-                            addComment($_POST['userId'],$_POST['comment']);
+                            add_comment($_POST['userId'],$_POST['comment']);
                         } 
                         else {
                             throw new Exception("Information missing from the request", 400);
