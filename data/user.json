@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+    
+        "image": {
+            "png":".\/assets\/images\/avatars\/image-amyrobson.png",
+            "webp":".\/assets\/images\/avatars\/image-amyrobson.webp"
+        },
+        "username":"amyrobson",
+        "password":"1234"
+        },
+    {
+        "id":2,
+        "image":{
+            "png":".\/assets\/images\/avatars\/image-juliusomo.png",
+            "webp":".\/assets\/images\/avatars\/image-juliusomo.webp"
+        },
+        "username":"juliusomo",
+        "password":"1234"
+    },{"username":"test2","password":"1234","image":{"png":".\/assets\/images\/avatars\/image-amyrobson.png","webp":".\/assets\/images\/avatars\/image-amyrobson.webp"},"id":3},{"username":"test","password":"1234","image":{"png":".\/assets\/images\/avatars\/image-amyrobson.png","webp":".\/assets\/images\/avatars\/image-amyrobson.webp"},"id":4}]

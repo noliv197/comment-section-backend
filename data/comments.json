@@ -1,1 +1,4 @@
-[{"content":"test","createdAt":1718249444,"score":0,"userId":"1","replies":[],"id":1}]
+[
+    {"content":"test","createdAt":1718249444,"score":2,"userId":"1","parentId":null,"id":1},
+    {"content":"test4","createdAt":1726036138,"score":0,"userId":"2","parentId":"1","id":3},
+    {"content":"test3","createdAt":1718249444,"score":10,"userId":"2","parentId":null,"id":4}]

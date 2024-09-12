@@ -1,14 +1,23 @@
 <?php
-    function add_comment($userId, $comment){
+    function add_comment($userId, $comment, $parentId){
         $comment_obj = [
             "content"=> $comment,
             "createdAt"=> time(),
             "score"=> 0,
             "userId"=> $userId,
-            "replies"=>[]
+            "parentId"=> $parentId
         ];
 
         add_on_json('./data/comments.json',$comment_obj);
+    }
+
+    function edit_comment($commentId, $comment){
+        // find comment and replace info
+    }
+
+    function delete_comment($commentId){
+        // find comment and replies and delete all
+        del_on_json('./data/comments.json',$commentId);
     }
 
     function get_comments(){
