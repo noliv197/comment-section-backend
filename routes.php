@@ -46,9 +46,16 @@
                         }
                     break;
                     case '/addComment':
-                        // check if user is logged in, if yes it adds a new entry to the cart_tb
-                        if(key_exists('userId', $_POST) && key_exists('comment', $_POST) && key_exists('parentId', $_POST) ){
-                            add_comment($_POST['userId'],$_POST['comment'], $_POST['parentId']);
+                        if(
+                            key_exists('userId', $_POST) && 
+                            key_exists('comment', $_POST) 
+                        )
+                        {
+                            add_comment(
+                                $_POST['userId'],
+                                $_POST['comment'], 
+                                (isset($_POST['parentId']) ? $_POST['parentId'] : null)
+                            );
                             print_r('Comment added successfully');
                         } 
                         else {
