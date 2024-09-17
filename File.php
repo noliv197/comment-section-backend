@@ -22,10 +22,25 @@
         file_put_contents($fileAddr, json_encode($jsonData));
     }
 
+    function edit_json($fileAddr, $dataid, $newData){
+        $jsonData = read_json($fileAddr, true);
+
+        foreach ($jsonData as $index => $data) {
+            if($data['id'] == $dataid){
+                if(isset($newData['content'])){
+                    $jsonData[$index]['content'] = $newData['content'];
+                } elseif(isset($newData['score'])){
+                    $jsonData[$index]['score'] = $newData['score'];
+                }
+            }
+        }
+
+        file_put_contents($fileAddr, json_encode($jsonData));
+    }
+
     function del_on_json($fileAddr, $commentId){
         $jsonData = read_json($fileAddr, true);
-        // $dataEmails = array_column($fileData, 'email');
-        // $commentExists = array_search(commentId, $dataEmails);
+ 
         foreach ($jsonData as $index => $comment) {
             if(
                 $comment['id'] == $commentId || 

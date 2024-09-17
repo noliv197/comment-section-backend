@@ -1,4 +1,1 @@
-[
-    {"content":"test","createdAt":1718249444,"score":2,"userId":"1","parentId":null,"id":1},
-    {"content":"test4","createdAt":1726036138,"score":0,"userId":"2","parentId":"1","id":3},
-    {"content":"test3","createdAt":1718249444,"score":10,"userId":"2","parentId":null,"id":4}]
+[{"content":"Welcome to the comment section!","createdAt":1718249444,"score":"2","userId":"1","parentId":null,"id":1},{"content":"Add your own comment to test the application","createdAt":1718249444,"score":10,"userId":"2","parentId":null,"id":4},{"content":"Hello!","createdAt":1726199059,"score":"0","userId":"2","parentId":"1","id":6}]

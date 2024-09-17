@@ -11,8 +11,8 @@
         add_on_json('./data/comments.json',$comment_obj);
     }
 
-    function edit_comment($commentId, $comment){
-        // find comment and replace info
+    function edit_comment($comment){
+        edit_json('./data/comments.json', $comment['id'], $comment);
     }
 
     function delete_comment($commentId){

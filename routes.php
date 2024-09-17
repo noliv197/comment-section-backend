@@ -62,17 +62,18 @@
                             throw new Exception("Information missing from the request", 400);
                         }
                     break;
+                    case '/editComment':
+                        if(key_exists('id', $_POST)){
+                            edit_comment($_POST);
+                            print_r('Edit comment succesfully');
+                        }
+                        else{
+                            throw new Exception("Information missing from the request", 400);
+                        }
+                    break;
                     default:
                         throw new Exception("No path found", 404);
                 } 
-            break;
-            case "PUT":
-                if($_SERVER['PATH_INFO'] === '/editComment'){
-                   
-                }
-                else {
-                    throw new Exception("No path found", 404);
-                }
             break;
             case "DELETE":
                 if($_SERVER['PATH_INFO'] === '/deleteComment'){
