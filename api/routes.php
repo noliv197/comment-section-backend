@@ -4,8 +4,8 @@
     include 'User.php';
     
     // add Cors-configuration
-    header("Access-Control-Allow-Origin: https://interactive-comments-section-git-main-noliv197s-projects.vercel.app");
-    // header("Access-Control-Allow-Origin: *");
+    // header("Access-Control-Allow-Origin: https://interactive-comments-section-git-main-noliv197s-projects.vercel.app");
+    header("Access-Control-Allow-Origin: *");
     header('Access-Control-Allow-Credentials: true');
     header("Access-Control-Allow-Methods: OPTIONS, GET, POST, PUT, DELETE");
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
