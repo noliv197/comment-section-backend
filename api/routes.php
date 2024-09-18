@@ -5,8 +5,8 @@
     
     // add Cors-configuration
     // header("Access-Control-Allow-Origin: https://interactive-comments-section-git-main-noliv197s-projects.vercel.app");
-    header("Access-Control-Allow-Origin: *");
     // header('Access-Control-Allow-Credentials: true');
+    header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Methods: OPTIONS, GET, POST, PUT, DELETE");
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
 
@@ -20,7 +20,12 @@
         switch($_SERVER["REQUEST_METHOD"]){
             //for browser request check
             case "OPTIONS":
-                http_response_code(204);
+                // http_response_code(204);
+                header("HTTP/1.1 200 OK");
+                header("Access-Control-Allow-Origin: *");
+                header("Access-Control-Allow-Methods: OPTIONS, GET, POST, PUT, DELETE");
+                header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
+                exit;
             break;
             case "GET":
                 switch ($_SERVER['PATH_INFO']) {
